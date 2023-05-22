@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Расписание</h2>
+<table>
+    <tr>
+        <th>День недели</th>
+        <th>Название группы</th>
+        <th>Начальное время</th>
+        <th>Конечное время</th>
+        <th>Название урока</th>
+        <th>Аудитория</th>
+        <th>Имя учителя</th>
+        <th>Дата</th>
+        <th>Курс</th>
+        <th>Комментарий ко дню</th>
+        <th>Подгруппа</th>  
+        <th>Действия</th>     
+    </tr>
+    {% for row in rows %}
+        <tr>
+            <td>{{ row['start_day'] }}</td>
+            <td>{{ row['groupname'] }}</td>
+            <td>{{ row['start_time'] }}</td>
+            <td>{{ row['end_time'] }}</td>
+            <td>{{ row['lessonname'] }}</td>
+            <td>{{ row['auditory'] }}</td>
+            <td>{{ row['teachername'] }}</td>
+            <td>{{ row['date'] }}</td>
+            <td>{{ row['course'] }}</td>
+            <td>{{ row['comment_to_day'] }}</td>
+            <td>{{ row['pod_groups'] }}</td>
+            <td>
+                <a href="/edit/{{ row['id'] }}">Редактировать</a>
+                <a href="/delete/{{ row['id'] }}">Удалить</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+<p><a href="/add">Добавить новое</a></p>
+{% endblock %}

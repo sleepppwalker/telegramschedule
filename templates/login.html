@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Авторизация</h2>
+{% if error %}
+    <p>{{ error }}</p>
+{% endif %}
+<form method="POST" action="/login">
+    <input type="text" name="username" placeholder="Логин" required><br>
+    <input type="password" name="password" placeholder="Пароль" required><br>
+    <input type="submit" value="Авторизоваться" class="waves-effect waves-light btn">
+</form>
+{% endblock %}

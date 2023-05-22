@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Расписание ЧПК</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .logout-link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Расписание ЧПК</h1>
+        {% if 'logged_in' in session %}
+            <p class="logout-link"><a class="waves-effect waves-light btn" href="/logout">Разлогиниться</a></p>
+        {% else %}
+            <p class="login-link"><a class="waves-effect waves-light btn" href="/login">Авторизоваться</a></p>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

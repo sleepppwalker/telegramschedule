@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Редактирование</h2>
+<form method="POST" action="/edit/{{ row.id }}">
+    <input type="hidden" name="id" value="{{ row.id }}">
+    <input type="text" name="start_day" placeholder="День недели" value="{{ row.start_day }}" required><br>
+    <input type="text" name="groupname" placeholder="Группа" value="{{ row.groupname }}" required><br>
+    <input type="time" name="start_time" placeholder="Начало пары" value="{{ row.start_time }}" required><br>
+    <input type="time" name="end_time" placeholder="Конец пары" value="{{ row.end_time }}" required><br>
+    <input type="text" name="lessonname" placeholder="Предмет" value="{{ row.lessonname }}" required><br>
+    <input type="text" name="auditory" placeholder="Аудитория" value="{{ row.auditory }}" required><br>
+    <input type="text" name="teachername" placeholder="Преподаватель" value="{{ row.teachername }}" required><br>
+    <input type="text" name="date" placeholder="Дата" value="{{ row.date }}"><br>
+    <input type="text" name="course" placeholder="Курс" value="{{ row.course }}" required><br>
+    <input type="text" name="comment_to_day" placeholder="Комментарий на день" value="{{ row.comment_to_day }}"><br>
+    <input type="text" name="pod_groups" placeholder="Подгруппа" value="{{ row.pod_groups }}"><br>
+    <button type="submit" class="waves-effect waves-light btn">Обновить</button>
+</form>
+{% endblock %}
