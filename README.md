@@ -1,3 +1,3 @@
 # telegramschedule
-# Telegram bot with Web-APP
-# requirements aiogram, flask
+Telegram bot with Web-APP
+requirements aiogram, flask
